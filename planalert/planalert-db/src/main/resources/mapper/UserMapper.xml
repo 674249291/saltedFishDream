@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.mapper.UserMapper">
+
+    <resultMap type="com.saltedfish.entity.User" id="userMap">
+        <id property="id" column="id" javaType="Integer" jdbcType="NUMERIC"/>
+        <result property="username" column="username" javaType="String" jdbcType="VARCHAR"/>
+        <result property="pwd" column="pwd" javaType="String" jdbcType="VARCHAR"/>
+        <result property="age" column="age" javaType="Integer" jdbcType="NUMERIC"/>
+        <result property="email" column="email" javaType="String" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <select id="getUser" resultMap="userMap">
+        SELECT *
+        FROM t_user u
+        <where>
+            u.id = #{id}
+        </where>
+        limit 0,1
+    </select>
+
+</mapper>
