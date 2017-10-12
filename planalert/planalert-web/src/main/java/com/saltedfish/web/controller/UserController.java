@@ -24,4 +24,10 @@ public class UserController {
         User user = userService.getUser(1);
         return ResultUtil.success(user);
     }
+
+    @RequestMapping("find")
+    public Result<User> findUser(){
+        User user = userService.getEntityById(User.class,1);
+        return ResultUtil.success(user);
+    }
 }
