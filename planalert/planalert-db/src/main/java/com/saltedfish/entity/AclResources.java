@@ -1,6 +1,21 @@
 package com.saltedfish.entity;
 
 
+import com.saltedfish.annotation.MapperClass;
+import com.saltedfish.mapper.AclResourcesMapper;
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+/**
+ * Created by Athos on 2016-06-29.
+ */
+@NameStyle(value = Style.camelhumpAndLowercase)
+@Table(name = "tbl_sysmgr_aclresources")
+@MapperClass(AclResourcesMapper.class)
 public class AclResources extends BaseEntity {
     public AclResources(){}
 
@@ -8,6 +23,7 @@ public class AclResources extends BaseEntity {
      * 资源地址
      * 可以是一个模块的请求地址,或者是一个按钮的请求地址
      */
+    @Column
     private String url;
 
     /**
@@ -15,32 +31,38 @@ public class AclResources extends BaseEntity {
      * 初期计划可以是 请求类型 模块 等等,统一定义为资源
      * 使用  AclResourceTypeEnum   赋值
      */
+    @Column
     private String type;
 
     /**
      * 资源名称
      * 资源的中文名,为了友好显示
      */
+    @Column
     private String name;
     /**
      * 资源代号
      * 实际上上是模块实体类的名字全小写,如果是按钮,可以是read query等
      */
+    @Column
     private String pronoun;
 
     /**
      *  上级资源
      */
+    @Column
     private Integer parentId;
 
     /**
      * 一对一 AclRequestType.id
      */
+    @Column
     private Integer requestTypeId;
 
     /**
      * 权限
      */
+    @Transient
     private String authority;
 
 

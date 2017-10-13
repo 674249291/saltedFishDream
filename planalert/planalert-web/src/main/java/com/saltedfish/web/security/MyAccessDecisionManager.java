@@ -1,4 +1,3 @@
-/*
 package com.saltedfish.web.security;
 
 import org.springframework.security.access.AccessDecisionVoter;
@@ -41,8 +40,7 @@ public class MyAccessDecisionManager extends AbstractAccessDecisionManager {
         return false;
     }
 
-    */
-/**
+    /**
      * Iterates through all <code>AccessDecisionVoter</code>s and ensures each can support
      * the presented class.
      * <p>
@@ -51,11 +49,10 @@ public class MyAccessDecisionManager extends AbstractAccessDecisionManager {
      *
      * @param clazz the type of secured object being presented
      * @return true if this type is supported
-     *//*
+     */
 
     @Override
     public boolean supports(Class<?> clazz) {
         return true;
     }
 }
-*/

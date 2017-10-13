@@ -1,6 +1,6 @@
 package com.saltedfish.service.base.impl;
 
-import com.commMapper.MyMapper;
+
 import com.saltedfish.annotation.MapperClass;
 import com.saltedfish.dto.FlexiPageDto;
 import com.saltedfish.helper.MyBatisHelper;
@@ -20,8 +20,6 @@ import java.util.List;
 @Service
 public abstract class BaseServiceImpl<T> implements IBaseService<T>{
 
-    @Autowired
-    protected MyMapper<T> myMapper;
 
     @Resource
     private MyBatisHelper myBatisHelper;

@@ -3,6 +3,7 @@ package com.saltedfish.web.controller;
 
 import com.saltedfish.entity.Result;
 import com.saltedfish.entity.User;
+import com.saltedfish.mapper.UserMapper;
 import com.saltedfish.service.user.UserService;
 import com.saltedfish.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;

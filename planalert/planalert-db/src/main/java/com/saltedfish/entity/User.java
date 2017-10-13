@@ -1,27 +1,31 @@
 package com.saltedfish.entity;
 
+import com.saltedfish.annotation.MapperClass;
+import com.saltedfish.mapper.UserMapper;
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
+
+import javax.persistence.*;
+
 /**
  * Created by xiongjun on 2017/8/19.
  */
-public class User {
+@NameStyle(value = Style.camelhumpAndLowercase)
+@Table(name="t_user")
+@MapperClass(UserMapper.class)
+public class User extends BaseEntity {
 
-    private Integer id;
-
+    @Column
     private String username;
 
+    @Column
     private String pwd;
 
+    @Column
     private Integer age;
 
+    @Column
     private String email;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

@@ -1,6 +1,21 @@
 package com.saltedfish.entity;
 
 
+import com.saltedfish.annotation.MapperClass;
+import com.saltedfish.mapper.AclUserMapper;
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+/**
+ * Created by Athos on 2016-06-29.
+ */
+@NameStyle(value = Style.camelhumpAndLowercase)
+@Table(name="tbl_sysmgr_acluser")
+@MapperClass(AclUserMapper.class)
 public class AclUser extends BaseEntity {
     public AclUser(){}
 
@@ -12,21 +27,26 @@ public class AclUser extends BaseEntity {
     /**
      * 用户名
      */
+    @Column
     private String userName;
     /**
      * 密码
      */
+    @Column
     private String userPwd;
     /**
      * 角色 json 格式  或逗号间隔 或转换为数组
      */
+    @Column
     private String roleIds;
 
+    @Transient
     private String roleNames;
 
     /**
      * 转换为数据 瞬时
      */
+    @Transient
     private String [] rolesesArray;
 
     public String getUserName() {

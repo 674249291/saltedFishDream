@@ -75,7 +75,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
-    <!--&lt;!&ndash; spring security &ndash;&gt;
+    <!-- spring security -->
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-web</artifactId>
@@ -90,8 +90,7 @@
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-taglibs</artifactId>
       <version>${spring-security.version}</version>
-    </dependency>-->
-
+    </dependency>
     <!-- 开发工具 自动重启== -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

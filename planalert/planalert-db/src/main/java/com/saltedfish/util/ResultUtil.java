@@ -3,6 +3,7 @@ package com.saltedfish.util;
 import com.saltedfish.entity.Result;
 import com.saltedfish.enums.ResultEnums;
 
+
 /**
  * Created by xiongjun on 2017/8/25.
  */
