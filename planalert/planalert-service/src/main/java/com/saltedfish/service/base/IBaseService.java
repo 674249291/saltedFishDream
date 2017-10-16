@@ -1,6 +1,8 @@
 package com.saltedfish.service.base;
 
 import com.saltedfish.dto.FlexiPageDto;
+import com.saltedfish.entity.Result;
+import com.saltedfish.entity.User;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
@@ -49,6 +51,5 @@ public interface IBaseService<T> {
      * 单表模糊查询总记录数
      */
     public int findRowCount(Example example);
-
 
 }

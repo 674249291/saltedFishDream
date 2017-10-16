@@ -59,7 +59,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				fsi.setAuthenticationManager(authenticationManagerBean());
 				return fsi;
 			}
-		}).and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login.html")).and().logout().logoutSuccessUrl("/index.html").permitAll();
+		}).and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login.html"))
+				.and().logout().logoutSuccessUrl("/index.html").permitAll();
 		// 自定义accessDecisionManager访问控制器,并开启表达式语言
 		http.exceptionHandling().accessDeniedHandler(accessDeniedHandler()).and().authorizeRequests().anyRequest().authenticated().expressionHandler(webSecurityExpressionHandler());
 

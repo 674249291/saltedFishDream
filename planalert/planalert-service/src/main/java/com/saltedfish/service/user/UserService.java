@@ -1,5 +1,6 @@
 package com.saltedfish.service.user;
 
+import com.saltedfish.entity.Result;
 import com.saltedfish.entity.User;
 import com.saltedfish.service.base.IBaseService;
 
@@ -10,4 +11,5 @@ public interface UserService extends IBaseService<User>{
 
     User getUser(int id);
 
+    Result<String> login(User user);
 }
