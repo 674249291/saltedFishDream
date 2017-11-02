@@ -19,12 +19,14 @@ public class MyBatisHelperImpl implements MyBatisHelper {
     @Qualifier("sessionFactory")
     private SqlSessionFactory sqlSessionFactory;
     private SqlSession sqlSession;
+    @Override
     public synchronized SqlSession getSqlSession(){
         if (null == sqlSession){
             this.sqlSession = new SqlSessionTemplate(sqlSessionFactory);
         }
         return this.sqlSession;
     }
+    @Override
     public <T extends Mapper> T getMapper(Class<T> cls){
        return getSqlSession().getMapper(cls);
     }

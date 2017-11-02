@@ -3,11 +3,20 @@ package com.saltedfish.enums;
 
 public enum AclResourceTypeEnum {
 
-    MODULE("M"),    //模块
+    /**
+     * 模块
+     */
+    MODULE("M"),
 
-    SUBMODULE("S"),//子模块
+    /**
+     * 子模块
+     */
+    SUBMODULE("S"),
 
-    REQUEST("R");//请求,CRUD
+    /**
+     * 请求,CRUD
+     */
+    REQUEST("R");
 
 
     String value;

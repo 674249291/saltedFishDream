@@ -28,10 +28,12 @@ public class RefreshToken extends HttpServlet {
 	@Autowired
 	private JwtUtil jwt;
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
     }
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
         	response.setContentType( "text/event-stream;charset=UTF-8" );

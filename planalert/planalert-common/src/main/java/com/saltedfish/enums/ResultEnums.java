@@ -5,8 +5,17 @@ package com.saltedfish.enums;
  */
 public enum  ResultEnums {
 
+    /**
+     * 未知错误
+     */
     UNKOWN_ERROR(-1,"未知错误"),
+    /**
+     * 成功
+     */
     SUCCESS(0, "成功"),
+    /**
+     * 请求失败
+     */
     fail(1,"请求失败")
     ;
 

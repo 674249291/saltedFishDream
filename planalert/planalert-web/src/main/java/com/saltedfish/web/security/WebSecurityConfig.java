@@ -35,6 +35,7 @@ import java.util.List;
 
 /**
  * Created by Athos on 2016-10-16.
+ * auth xiongjun
  */
 @Configuration
 @EnableWebSecurity
@@ -50,10 +51,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.addFilterAfter(MyUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+		http.addFilterAfter(MyUserNamePassWordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 		// 开启默认登录页面
 		http.authorizeRequests().anyRequest().authenticated().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
-			public <O extends FilterSecurityInterceptor> O postProcess(O fsi) {
+			@Override
+            public <O extends FilterSecurityInterceptor> O postProcess(O fsi) {
 				fsi.setSecurityMetadataSource(mySecurityMetadataSource);
 				fsi.setAccessDecisionManager(accessDecisionManager());
 				fsi.setAuthenticationManager(authenticationManagerBean());
@@ -86,7 +88,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	UsernamePasswordAuthenticationFilter MyUsernamePasswordAuthenticationFilter() {
+	UsernamePasswordAuthenticationFilter MyUserNamePassWordAuthenticationFilter() {
 		UsernamePasswordAuthenticationFilter myUsernamePasswordAuthenticationFilter = new UsernamePasswordAuthenticationFilter();
 		myUsernamePasswordAuthenticationFilter.setPostOnly(true);
 		myUsernamePasswordAuthenticationFilter.setAuthenticationManager(authenticationManagerBean());

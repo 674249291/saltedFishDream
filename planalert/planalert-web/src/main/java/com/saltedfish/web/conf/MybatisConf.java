@@ -46,6 +46,7 @@ public class MybatisConf implements TransactionManagementConfigurer {
     }
 
 
+    @Override
     public PlatformTransactionManager annotationDrivenTransactionManager(){
         return new DataSourceTransactionManager(dataSource);
     }
